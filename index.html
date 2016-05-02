@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>NetProg Homework 6</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<style type="text/css">
+			#images img {
+				width: 20%;
+			}
+
+			.imageBorder {
+				border: 5px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="buttons">
+			<input type="button" id="unwrapImages" value="Unwrap" />
+			<input type="button" id="addBorder" value="Add Borders" />
+			<input type="button" id="removeBorder" value="Remove Borders" />
+			<input type="button" id="toggleBorder" value="Toggle Borders" />
+		</div>
+
+		<div id="images">
+			<div><img src="http://i.imgur.com/zriEI7a.jpg" /></div>
+			<div><img src="http://i.imgur.com/Z3qVgEd.jpg" class="imageBorder" /></div>
+			<div><img src="http://i.imgur.com/eZRcosY.jpg" /></div>
+		</div>
+    <script>
+    var iTags = $( "img" );
+    $('#unwrapImages').bind("click",function(){
+      console.log("lol")
+        //if last tag was div
+        if ( iTags.parent().is( "div" ) && iTags.parent().length !=  1 ) {
+          iTags.unwrap();
+        }
+     });
+     $('#addBorder').bind("click",function(){
+         //iTags.removeClass("imageBorder");
+         iTags.addClass("imageBorder");
+      });
+      $('#removeBorder').bind("click",function(){
+          iTags.removeClass("imageBorder");
+       });
+       $('#toggleBorder').bind("click",function(){
+           //if img has class border
+           var iTags1 = $( "img.imageBorder" );
+           iTags.addClass("imageBorder");
+           iTags1.removeClass("imageBorder");
+
+
+        });
+    </script>
+	</body>
+</html>
